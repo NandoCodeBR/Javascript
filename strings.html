@@ -12,8 +12,36 @@
         document.write("<p>O meu nome é " +nome +" e o nome trocando a letra O por ovski fica " + nome.replace("o","ovski") + "</p>")
 
     </script>
+    <script>
+        function Funcao() {
+          var str = document.getElementById("demo").innerHTML; 
+          var txt = str.replace("Microsoft","Minha escola");
+          document.getElementById("demo").innerHTML = txt;
+        }
+        function Realocagem() {
+            var str = document.getElementById("demo1").innerHTML;
+            var txt = str.replace(/rato/g, "cachorro");
+            document.getElementById("demo1").innerHTML = txt;
+        }
+        function aleatorio(){
+            var str = document.getElementById("aleat").innerHTML;
+            var rand = ["banana","Laranja","Maçã"];
+            var s = str.replace("fruta",rand[Math.floor(Math.random()*3)]);
+            document.getElementById("aleat").innerHTML = s;
+        }
+        </script>
 </head>
 <body>
-    
+<button onclick="Funcao()">Clique aqui</button>
+<p id="demo">Por favor visite a Microsoft!</p>
+<hr>
+<button onclick="Realocagem()">Realocagem global</button>
+<p id="demo1">O rato roubou o queijo de outro rato e mordeu o outro rato</p>
+<hr>
+<button onclick="aleatorio()">Realocagem com item aleatório do array</button>
+<p id="aleat">Eu adoraria comer uma fruta</p>
+
+
+
 </body>
 </html>

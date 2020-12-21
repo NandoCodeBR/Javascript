@@ -5,35 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var x = Math.ceil(10.580)
-        document.write("<p>Método math.ceil</p>",x,"<hr>"); //arredondando para baixo
         
-        var x = Math.floor(10.580)
-        document.write("<p>Método math.floor</p>",x,"<hr>"); //arredondando para cima
-
-        var x = Math.round(10.580)
-        document.write("<p>Método math.round</p>",x,"<hr>"); //arredondando para cima ou pra baixo dependendo do peso da fração
+        // var x = Math.ceil(10.580)
+        // document.write("<p>Método math.ceil</p>",x,"<hr>"); //arredondando para baixo
         
-        var y = Math.random()
-        document.write("<p>Método math.random</p>",y,"<hr>"); //define um número aleatório entre 0 e 1
+        // var x = Math.floor(10.580)
+        // document.write("<p>Método math.floor</p>",x,"<hr>"); //arredondando para cima
 
-        var z = Math.pow(3,2)
-        document.write("<p>Método math.pow</p>",z,"<hr>"); //define um número x elevada a potência de y
+        // var x = Math.round(10.580)
+        // document.write("<p>Método math.round</p>",x,"<hr>"); //arredondando para cima ou pra baixo dependendo do peso da fração
+        
+        // var y = Math.random()
+        // document.write("<p>Método math.random</p>",y,"<hr>"); //define um número aleatório entre 0 e 1
 
-        var z = Math.sqrt(9)
-        document.write("<p>Método math.sqrt</p>",z,"<hr>"); //define a raiz quadrada de tal numero
+        // var z = Math.pow(3,2)
+        // document.write("<p>Método math.pow</p>",z,"<hr>"); //define um número x elevada a potência de y
+
+        // var z = Math.sqrt(9)
+        // document.write("<p>Método math.sqrt</p>",z,"<hr>"); //define a raiz quadrada de tal numero
 
 
         // ----------------------------DATAS----------------------------------------------------
+        function time(){
         var data = new Date() // cria um novo objeto data
-        document.writeln(data.getFullYear()) // revela o ano
-        document.writeln(data.getMonth()); // revela o mês do ano
-        document.writeln(data.getDay())// revela o dia do mês
-        document.writeln("<hr>")
-        document.writeln("A data atual é o ano de ",data.getFullYear()," do mês ",data.getMonth()," do dia ",data.getDay(), ", o horário atual é: ",data.getHours(), ":", data.getMinutes(), ":", data.getSeconds()) // exemplo usando funções de data e hora
+        
+        // document.writeln(data); // revela o ano
+        // document.writeln("<hr>")
+        // document.writeln("A data atual é o ano de ",data.getFullYear()," do mês ",data.getMonth()+1," do dia ",data.getDate(), ", o horário atual é: ",data.getHours(), ":", data.getMinutes(), ":", data.getSeconds()) // exemplo usando funções de data e hora
+    //A contagem de GetMonth() começa de 0 a 11, ou seja, 0 para janeiro e 11 para dezembro, por isso adicionamos +1 na contagem de data.getMonth()
+    //getDay é a contagem do dia da semana, enquanto getDate() é o dia do mês
+    h=data.getHours();
+    m=data.getMinutes();
+    s=data.getSeconds();
+    document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+    setTimeout('time()',500)
+        }
     </script>
 </head>
-<body>
-    
+<body onload="time()">
+    <div id="txt"></div>
 </body>
 </html>

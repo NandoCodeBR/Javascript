@@ -37,17 +37,34 @@
     h=data.getHours();
     m=data.getMinutes();
     s=data.getSeconds();
-    document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+    document.getElementById('txt').innerHTML=data.toString();
     repetidor = setTimeout('time()',500)
+
+    x = data.getTime();
+    data1 = new Date(2019,11,24);
+    y = data1.getTime();
+
+    diferenca = 1000
+    //Dias = 24*60*60*1000
+    //horas = 60*60*1000
+    //minutos = 60*1000
+    //segundos = 1000
+    //milisegundos = 1
+
+    horaTotal = Math.ceil((x-y)/diferenca); // a data do ano passado - a data atual
+
+    document.getElementById('tempo').innerHTML="Segundos contados desde "+data1.toString()+": "+horaTotal;
 
 
     
         }
     </script>
 </head>
-<body>
+<body onload="time()">
     <div id="txt"></div>
+    
     <button onclick="time()">Iniciar contagem</button>
     <button onclick="clearInterval(repetidor)">Parar contagem</button>
+    <div id="tempo"></div>
 </body>
 </html>
